@@ -32,7 +32,7 @@ export const getSquareOfCircle = (radius) => {
  * @returns {number}
  */
 export const getFixedValue = (number, accuracy) => {
-  return Math.round(number * 1000) / 1000
+  return Math.round(number * (10 ** accuracy)) / (10 ** accuracy);
 };
 
 /**
@@ -42,11 +42,10 @@ export const getFixedValue = (number, accuracy) => {
  * @returns {number}
  */
 export const getFlooroCeil = (number) => {
-  let x = Math.round(number)
-  if (x % 2 === 0) {
-    return Math.floor(number)
+  if (+number.toFixed() % 2 === 0) {
+    return Math.floor(number);
   } else {
-    return Math.ceil(number)
+    return Math.ceil(number);
   }
 };
 
